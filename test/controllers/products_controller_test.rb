@@ -5,6 +5,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     @product = products(:one)
   end
 
+  setup do
+    @product = products(:one)
+    @title = "The Great Book #{rand(1000)}"
+  end
+
   test "should get index" do
     get products_url
     assert_response :success
